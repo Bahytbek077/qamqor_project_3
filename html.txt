@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Qamqor – Поддержка онкопациентов</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.03);
+    }
+    .treatment-step {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    .treatment-step:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: #3b82f6;
+    }
+    .treatment-step:after {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 1.5rem;
+      width: 2px;
+      height: calc(100% - 1rem);
+      background-color: #e5e7eb;
+    }
+    .treatment-step:last-child:after {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+  <!-- Header with gradient background -->
+  <header class="gradient-bg text-white py-12 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+        <i class="fas fa-heartbeat mr-3"></i> Qamqor
+      </h1>
+      <p class="text-xl md:text-2xl opacity-90 animate-fade-in delay-100">
+        Цифровой маршрут и поддержка для онкопациентов
+      </p>
+      <div class="mt-8 animate-fade-in delay-200">
+        <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full inline-flex items-center hover-scale">
+          <i class="fas fa-comment-medical mr-2"></i> Связаться с нами
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="text-blue-600 font-bold text-xl">
+          <i class="fas fa-heartbeat mr-2"></i> Qamqor
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">О проекте</a>
+          <a href="#how" class="text-gray-700 hover:text-blue-600 font-medium">Как это работает</a>
+          <a href="#route" class="text-gray-700 hover:text-blue-600 font-medium">Маршрут пациента</a>
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Контакты</a>
+        </div>
+        <button class="md:hidden text-gray-700">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 hover-scale animate-fade-in delay-200">
+      <div class="flex items-center mb-6">
+        <div class="bg-blue-100 p-3 rounded-full mr-4">
+          <i class="fas fa-info-circle text-blue-600 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800">Что такое Qamqor?</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-gray-700 mb-4">
+            Qamqor — это цифровое решение, помогающее онкопациентам ориентироваться в процессе диагностики, лечения и наблюдения.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Мы создаём простой и понятный маршрут, чтобы вы всегда знали, на каком этапе находитесь и что делать дальше.
+          </p>
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+            <p class="text-blue-800 font-medium">
+              <i class="fas fa-lightbulb mr-2"></i> Наша цель — сделать сложный процесс лечения более понятным и управляемым.
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6 flex items-center justify-center">
+          <img src="https://img.icons8.com/color/96/000000/medical-mobile-app.png" alt="Medical app" class="w-32 h-32">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works Section -->
+  <section id="how" class="py-16 px-4 max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 hover-scale animate-fade-in delay-300">
+      <div class="flex items-center mb-6">
+        <div class="bg-blue-100 p-3 rounded-full mr-4">
+          <i class="fas fa-cogs text-blue-600 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800">Как это работает?</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-qrcode text-blue-600"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Получите QR-код</h3>
+          <p class="text-gray-600 text-sm">Врач генерирует персональный QR-код при выписке</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-mobile-alt text-blue-600"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Доступ к маршруту</h3>
+          <p class="text-gray-600 text-sm">Отсканируйте код и получите доступ к личному кабинету</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-bell text-blue-600"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Поддержка</h3>
+          <p class="text-gray-600 text-sm">Получайте напоминания и консультации в Telegram</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient Route Section -->
+  <section id="route" class="py-16 px-4 max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 hover-scale animate-fade-in delay-400">
+      <div class="flex items-center mb-6">
+        <div class="bg-blue-100 p-3 rounded-full mr-4">
+          <i class="fas fa-route text-blue-600 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800">Типичный маршрут пациента</h2>
+      </div>
+      <div class="space-y-4">
+        <div class="treatment-step">
+          <h3 class="font-semibold text-lg">1. Первичная диагностика</h3>
+          <p class="text-gray-600">Запись к онкологу → УЗИ + биопсия → Ожидание гистологии</p>
+        </div>
+        <div class="treatment-step">
+          <h3 class="font-semibold text-lg">2. Определение тактики</h3>
+          <p class="text-gray-600">Консилиум врачей (МДГ) → Решение по лечению (ХТ / операция / ЛТ)</p>
+        </div>
+        <div class="treatment-step">
+          <h3 class="font-semibold text-lg">3. Подготовка к лечению</h3>
+          <p class="text-gray-600">Анализы перед химиотерапией → Приём у химиотерапевта</p>
+        </div>
+        <div class="treatment-step">
+          <h3 class="font-semibold text-lg">4. Лечение</h3>
+          <p class="text-gray-600">Госпитализация (обычно 4–6 дней) → Контроль анализов → Выписка</p>
+        </div>
+        <div class="treatment-step">
+          <h3 class="font-semibold text-lg">5. Наблюдение</h3>
+          <p class="text-gray-600">Повторный анализ через 3–5 дней → Контрольные обследования после курсов → МДГ → дальнейшая тактика</p>
+        </div>
+      </div>
+      <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+        <p class="text-yellow-800">
+          <i class="fas fa-exclamation-circle mr-2"></i> В зависимости от стадии лечения схема может отличаться: неоадъювантная, адъювантная или самостоятельная химиотерапия.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4 max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 hover-scale">
+      <div class="flex items-center mb-6">
+        <div class="bg-blue-100 p-3 rounded-full mr-4">
+          <i class="fas fa-comments text-blue-600 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800">Нужна поддержка?</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-gray-700 mb-6">
+            Если у вас есть вопросы или вам нужна помощь — свяжитесь с нами любым удобным способом. Мы всегда готовы помочь.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="bg-blue-100 p-2 rounded-full mr-3">
+                <i class="fas fa-envelope text-blue-600"></i>
+              </div>
+              <a href="mailto:bahytbek077@gmail.com" class="text-blue-600 hover:underline">bahytbek077@gmail.com</a>
+            </div>
+            <div class="flex items-center">
+              <div class="bg-blue-100 p-2 rounded-full mr-3">
+                <i class="fab fa-telegram text-blue-600"></i>
+              </div>
+              <a href="https://t.me/senimqamqorbot" target="_blank" class="text-blue-600 hover:underline">@senimqamqorbot</a>
+            </div>
+            <div class="flex items-center">
+              <div class="bg-blue-100 p-2 rounded-full mr-3">
+                <i class="fab fa-github text-blue-600"></i>
+              </div>
+              <a href="https://github.com/Bahytbek077" target="_blank" class="text-blue-600 hover:underline">Bahytbek077</a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6 flex flex-col justify-center">
+          <a href="https://t.me/senimqamqorbot" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-center mb-4 flex items-center justify-center">
+            <i class="fab fa-telegram mr-2 text-xl"></i> Написать в Telegram
+          </a>
+          <a href="https://example.com/Qamqor-pdf" target="_blank" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg text-center flex items-center justify-center">
+            <i class="fas fa-file-pdf mr-2"></i> Скачать PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 px-4 max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Часто задаваемые вопросы</h2>
+      <div class="space-y-4">
+        <div class="border-b border-gray-200 pb-4">
+          <button class="flex items-center justify-between w-full text-left font-semibold text-gray-800">
+            <span>Как получить маршрут лечения?</span>
+            <i class="fas fa-chevron-down text-blue-600"></i>
+          </button>
+          <div class="mt-2 text-gray-600 hidden">
+            Врач генерирует персональный QR-код при выписке, который вы можете отсканировать для доступа к своему маршруту.
+          </div>
+        </div>
+        <div class="border-b border-gray-200 pb-4">
+          <button class="flex items-center justify-between w-full text-left font-semibold text-gray-800">
+            <span>Можно ли сохранить маршрут?</span>
+            <i class="fas fa-chevron-down text-blue-600"></i>
+          </button>
+          <div class="mt-2 text-gray-600 hidden">
+            Да, вы можете сохранить маршрут в формате PDF или просматривать его в мобильном приложении Qamqor.
+          </div>
+        </div>
+        <div class="border-b border-gray-200 pb-4">
+          <button class="flex items-center justify-between w-full text-left font-semibold text-gray-800">
+            <span>Как добавить результаты обследований?</span>
+            <i class="fas fa-chevron-down text-blue-600"></i>
+          </button>
+          <div class="mt-2 text-gray-600 hidden">
+            Вы можете загружать результаты обследований вручную через личный кабинет или отправить их нашему консультанту в Telegram.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="gradient-bg text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <i class="fas fa-heartbeat mr-2"></i> Qamqor
+          </h3>
+          <p class="text-blue-100">
+            Цифровой маршрут и поддержка для онкопациентов.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Ссылки</h3>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-blue-100 hover:text-white">О проекте</a></li>
+            <li><a href="#how" class="text-blue-100 hover:text-white">Как это работает</a></li>
+            <li><a href="#route" class="text-blue-100 hover:text-white">Маршрут пациента</a></li>
+            <li><a href="#contact" class="text-blue-100 hover:text-white">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Контакты</h3>
+          <div class="space-y-2">
+            <div class="flex items-center">
+              <i class="fas fa-envelope mr-2 text-blue-200"></i>
+              <a href="mailto:bahytbek077@gmail.com" class="text-blue-100 hover:text-white">bahytbek077@gmail.com</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fab fa-telegram mr-2 text-blue-200"></i>
+              <a href="https://t.me/senimqamqorbot" target="_blank" class="text-blue-100 hover:text-white">@senimqamqorbot</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-blue-400 mt-8 pt-8 text-center text-blue-200">
+        <p>© 2025 Qamqor. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple FAQ toggle functionality
+    document.querySelectorAll('#faq button').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        
+        if (answer.classList.contains('hidden')) {
+          answer.classList.remove('hidden');
+          icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+          answer.classList.add('hidden');
+          icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        }
+      });
+    });
+
+    // Mobile menu toggle would go here
+  </script>
+</body>
+</html>
